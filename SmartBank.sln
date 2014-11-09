@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PoWebApp", "http://localhost/PoWebApp", "{4673036C-2622-4C57-8980-274B62948285}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.1"
+		Debug.AspNetCompiler.VirtualPath = "/PoWebApp"
+		Debug.AspNetCompiler.PhysicalPath = "PoWebApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\PoWebApp\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/PoWebApp"
+		Release.AspNetCompiler.PhysicalPath = "PoWebApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\PoWebApp\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "PoWebApp\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SmartBankWebApp2", "http://localhost/SmartBankWebApp2", "{66CCB895-2FCB-4690-8C87-34AB62F9B058}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.1"
+		Debug.AspNetCompiler.VirtualPath = "/SmartBankWebApp2"
+		Debug.AspNetCompiler.PhysicalPath = "SmartBankWebApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\SmartBankWebApp2\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/SmartBankWebApp2"
+		Release.AspNetCompiler.PhysicalPath = "SmartBankWebApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\SmartBankWebApp2\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "SmartBankWebApp\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4673036C-2622-4C57-8980-274B62948285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4673036C-2622-4C57-8980-274B62948285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4673036C-2622-4C57-8980-274B62948285}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{4673036C-2622-4C57-8980-274B62948285}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{66CCB895-2FCB-4690-8C87-34AB62F9B058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66CCB895-2FCB-4690-8C87-34AB62F9B058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66CCB895-2FCB-4690-8C87-34AB62F9B058}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{66CCB895-2FCB-4690-8C87-34AB62F9B058}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

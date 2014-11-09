@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BankDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\HACKATHON2\SMARTBANKWEBAPP\APP_DATA\BANKDB.MDF.dbo.AccountInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AccountInfo">
+          <Key>
+            <PropertyRef Name="AccountNumber" />
+            <PropertyRef Name="Balance" />
+          </Key>
+          <Property Name="AccountNumber" Type="varchar(max)" Nullable="false" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\HACKATHON2\SMARTBANKWEBAPP\APP_DATA\BANKDB.MDF.dbo.Customer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="AccountNumber" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="DOB" />
+            <PropertyRef Name="MobileNumber" />
+          </Key>
+          <Property Name="AccountNumber" Type="varchar(max)" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="DOB" Type="datetime" Nullable="false" />
+          <Property Name="MobileNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\HACKATHON2\SMARTBANKWEBAPP\APP_DATA\BANKDB.MDF.dbo.MOStatusTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MOStatusTable">
+          <Key>
+            <PropertyRef Name="EndUserName" />
+            <PropertyRef Name="EndUserPhoto" />
+            <PropertyRef Name="DOB" />
+            <PropertyRef Name="AmountTransferred" />
+            <PropertyRef Name="EndUserMobileNumber" />
+            <PropertyRef Name="PIN" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="AccountNumber" />
+            <PropertyRef Name="VendorInformation" />
+          </Key>
+          <Property Name="EndUserName" Type="varchar(max)" Nullable="false" />
+          <Property Name="EndUserPhoto" Type="varbinary(max)" Nullable="false" />
+          <Property Name="DOB" Type="datetime" Nullable="false" />
+          <Property Name="AmountTransferred" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="EndUserMobileNumber" Type="int" Nullable="false" />
+          <Property Name="PIN" Type="int" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AccountNumber" Type="varchar(max)" Nullable="false" />
+          <Property Name="VendorInformation" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\HACKATHON2\SMARTBANKWEBAPP\APP_DATA\BANKDB.MDF.dbo.Transactions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Transactions">
+          <Key>
+            <PropertyRef Name="EndUserName" />
+            <PropertyRef Name="EndUserPhoto" />
+            <PropertyRef Name="DOB" />
+            <PropertyRef Name="AmountTransferred" />
+            <PropertyRef Name="EndUserMobileNumber" />
+            <PropertyRef Name="PIN" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="AccountNumber" />
+            <PropertyRef Name="VendorInformation" />
+          </Key>
+          <Property Name="EndUserName" Type="varchar(max)" Nullable="false" />
+          <Property Name="EndUserPhoto" Type="varbinary(max)" Nullable="false" />
+          <Property Name="DOB" Type="datetime" Nullable="false" />
+          <Property Name="AmountTransferred" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="EndUserMobileNumber" Type="int" Nullable="false" />
+          <Property Name="PIN" Type="int" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AccountNumber" Type="varchar(max)" Nullable="false" />
+          <Property Name="VendorInformation" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\HACKATHON2\SMARTBANKWEBAPP\APP_DATA\BANKDB.MDF.dbo.UserCredentials' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserCredentials">
+          <Key>
+            <PropertyRef Name="LoginID" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="AccountNumber" />
+          </Key>
+          <Property Name="LoginID" Type="varchar(max)" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AccountNumber" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BankDBModelStoreContainer">
+          <EntitySet Name="AccountInfo" EntityType="Self.AccountInfo" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AccountInfo].[AccountNumber] AS [AccountNumber], 
+    [AccountInfo].[Balance] AS [Balance]
+    FROM [dbo].[AccountInfo] AS [AccountInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Customer" EntityType="Self.Customer" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Customer].[AccountNumber] AS [AccountNumber], 
+    [Customer].[Name] AS [Name], 
+    [Customer].[DOB] AS [DOB], 
+    [Customer].[MobileNumber] AS [MobileNumber]
+    FROM [dbo].[Customer] AS [Customer]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MOStatusTable" EntityType="Self.MOStatusTable" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MOStatusTable].[EndUserName] AS [EndUserName], 
+    [MOStatusTable].[EndUserPhoto] AS [EndUserPhoto], 
+    [MOStatusTable].[DOB] AS [DOB], 
+    [MOStatusTable].[AmountTransferred] AS [AmountTransferred], 
+    [MOStatusTable].[EndUserMobileNumber] AS [EndUserMobileNumber], 
+    [MOStatusTable].[PIN] AS [PIN], 
+    [MOStatusTable].[Status] AS [Status], 
+    [MOStatusTable].[AccountNumber] AS [AccountNumber], 
+    [MOStatusTable].[VendorInformation] AS [VendorInformation]
+    FROM [dbo].[MOStatusTable] AS [MOStatusTable]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Transactions" EntityType="Self.Transactions" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Transactions].[EndUserName] AS [EndUserName], 
+    [Transactions].[EndUserPhoto] AS [EndUserPhoto], 
+    [Transactions].[DOB] AS [DOB], 
+    [Transactions].[AmountTransferred] AS [AmountTransferred], 
+    [Transactions].[EndUserMobileNumber] AS [EndUserMobileNumber], 
+    [Transactions].[PIN] AS [PIN], 
+    [Transactions].[Status] AS [Status], 
+    [Transactions].[AccountNumber] AS [AccountNumber], 
+    [Transactions].[VendorInformation] AS [VendorInformation]
+    FROM [dbo].[Transactions] AS [Transactions]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserCredentials" EntityType="Self.UserCredentials" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserCredentials].[LoginID] AS [LoginID], 
+    [UserCredentials].[Password] AS [Password], 
+    [UserCredentials].[AccountNumber] AS [AccountNumber]
+    FROM [dbo].[UserCredentials] AS [UserCredentials]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BankDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="AccountNumber" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="DOB" />
+            <PropertyRef Name="MobileNumber" />
+          </Key>
+          <Property Name="AccountNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MobileNumber" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MOStatusTable">
+          <Key>
+            <PropertyRef Name="EndUserName" />
+            <PropertyRef Name="EndUserPhoto" />
+            <PropertyRef Name="DOB" />
+            <PropertyRef Name="AmountTransferred" />
+            <PropertyRef Name="EndUserMobileNumber" />
+            <PropertyRef Name="PIN" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="AccountNumber" />
+            <PropertyRef Name="VendorInformation" />
+          </Key>
+          <Property Name="EndUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EndUserPhoto" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AmountTransferred" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="EndUserMobileNumber" Type="Int32" Nullable="false" />
+          <Property Name="PIN" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AccountNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VendorInformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="EndUserName" />
+            <PropertyRef Name="EndUserPhoto" />
+            <PropertyRef Name="DOB" />
+            <PropertyRef Name="AmountTransferred" />
+            <PropertyRef Name="EndUserMobileNumber" />
+            <PropertyRef Name="PIN" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="AccountNumber" />
+            <PropertyRef Name="VendorInformation" />
+          </Key>
+          <Property Name="EndUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EndUserPhoto" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AmountTransferred" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="EndUserMobileNumber" Type="Int32" Nullable="false" />
+          <Property Name="PIN" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AccountNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VendorInformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserCredential">
+          <Key>
+            <PropertyRef Name="LoginID" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="AccountNumber" />
+          </Key>
+          <Property Name="LoginID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AccountNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BankDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="MOStatusTables" EntityType="Self.MOStatusTable" />
+          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+          <EntitySet Name="UserCredentials" EntityType="Self.UserCredential" />
+          <EntitySet Name="AccountInfoes" EntityType="BankDBModel.AccountInfo" />
+        </EntityContainer>
+        <EntityType Name="AccountInfo">
+          <Key>
+            <PropertyRef Name="AccountNumber" />
+            <PropertyRef Name="Balance" />
+          </Key>
+          <Property Name="AccountNumber" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Balance" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BankDBModelStoreContainer" CdmEntityContainer="BankDBEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="BankDBModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MOStatusTables">
+            <EntityTypeMapping TypeName="BankDBModel.MOStatusTable">
+              <MappingFragment StoreEntitySet="MOStatusTable">
+                <ScalarProperty Name="EndUserName" ColumnName="EndUserName" />
+                <ScalarProperty Name="EndUserPhoto" ColumnName="EndUserPhoto" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="AmountTransferred" ColumnName="AmountTransferred" />
+                <ScalarProperty Name="EndUserMobileNumber" ColumnName="EndUserMobileNumber" />
+                <ScalarProperty Name="PIN" ColumnName="PIN" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="VendorInformation" ColumnName="VendorInformation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="BankDBModel.Transaction">
+              <MappingFragment StoreEntitySet="Transactions">
+                <ScalarProperty Name="EndUserName" ColumnName="EndUserName" />
+                <ScalarProperty Name="EndUserPhoto" ColumnName="EndUserPhoto" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="AmountTransferred" ColumnName="AmountTransferred" />
+                <ScalarProperty Name="EndUserMobileNumber" ColumnName="EndUserMobileNumber" />
+                <ScalarProperty Name="PIN" ColumnName="PIN" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+                <ScalarProperty Name="VendorInformation" ColumnName="VendorInformation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserCredentials">
+            <EntityTypeMapping TypeName="BankDBModel.UserCredential">
+              <MappingFragment StoreEntitySet="UserCredentials">
+                <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountInfoes">
+            <EntityTypeMapping TypeName="BankDBModel.AccountInfo">
+              <MappingFragment StoreEntitySet="AccountInfo">
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
